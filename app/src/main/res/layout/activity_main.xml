@@ -7,20 +7,21 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtHello"
-        android:layout_below="@+id/imgKakashi"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:textSize="25dp"
-        android:text="Hello"
-        />
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@mipmap/kakashi"
-        android:id="@+id/imgKakashi"
-        android:layout_centerInParent="true"/>
+   <Spinner
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:id="@+id/langSpinner"
+      android:layout_centerHorizontal="true"
+       android:entries="@array/language_lists"
+      android:layout_marginTop="40dp"
+      />
+
+   <ListView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/citiesList"
+       android:layout_below="@+id/langSpinner"
+       android:layout_marginTop="50dp"
+       />
+
 </RelativeLayout>

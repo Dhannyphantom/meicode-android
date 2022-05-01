@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Meicode</string>
+    <string-array name="language_lists">
+        <item>Javascript</item>
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>Swift</item>
+        <item>C/C++</item>
+        <item>Ruby</item>
+        <item>GoLang</item>
+        <item>PHP</item>
+    </string-array>
 </resources>
