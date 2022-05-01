@@ -4,41 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edTxtName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSubmit"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="25dp"
-        android:textStyle="bold|italic"
-        android:hint="Enter name" />
-
-    <TextView
-        android:id="@+id/txtMessage"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="My First Meicode App"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/btnSubmit"
-        android:textColor="#003399"
-        android:textSize="20sp"
-        android:textStyle="bold|italic" />
-
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/black"
-        android:text="Submit"
+        android:layout_marginTop="10dp">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harry Porter"
+            android:checked="true"
+            android:id="@+id/checkboxHarryporter"
 
-        />
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The Joker"
+            android:checked="true"
+            android:id="@+id/checkboxJoker"
+            android:layout_toRightOf="@+id/checkboxHarryporter"
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matrix"
+            android:id="@+id/checkboxMatrix"
+            android:layout_toRightOf="@+id/checkboxJoker"
+            android:checked="true"
+
+            />
+    </RelativeLayout>
+
+
+
 
 </RelativeLayout>

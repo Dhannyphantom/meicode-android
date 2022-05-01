@@ -2,47 +2,34 @@ package com.example.meicode;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-   private TextView txtMessage;
-   private EditText edtTxtName;
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btnSubmit:
-                handleSubmit(view);
-                break;
-            case R.id.edTxtName:
-                Toast.makeText(this, "Input focused", Toast.LENGTH_SHORT).show();
-            default:
-                break;
-        }
-    }
+public class MainActivity extends AppCompatActivity {
+
+    CheckBox checkBoxHarry, checkBoxJoker, checkBoxMatrix;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button submitBtn = findViewById(R.id.btnSubmit);
-        txtMessage = findViewById(R.id.txtMessage);
-        edtTxtName = findViewById(R.id.edTxtName);
+        checkBoxHarry = findViewById(R.id.checkboxHarryporter);
 
-        edtTxtName.setOnClickListener(this);
-        submitBtn.setOnClickListener(this);
+        checkBoxHarry.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    Toast.makeText(MainActivity.this, "Watched", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Not watched", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 
-    public void handleSubmit (View v) {
-        txtMessage.setText(edtTxtName.getText().toString());
-    }
 
 }
