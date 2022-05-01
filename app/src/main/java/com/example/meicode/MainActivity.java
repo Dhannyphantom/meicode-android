@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -13,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     CheckBox checkBoxHarry, checkBoxJoker, checkBoxMatrix;
     RadioGroup radioGender;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +25,29 @@ public class MainActivity extends AppCompatActivity {
 
         checkBoxHarry = findViewById(R.id.checkboxHarryporter);
         radioGender = findViewById(R.id.rgGender);
+        progressBar = findViewById(R.id.progressBar);
+
+        Thread progressThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    progressBar.incrementProgressBy(10);
+                    SystemClock.sleep(600);
+                }
+            }
+        });
+        progressThread.start();
+
         radioGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @SuppressLint("NonConstantResourceId")
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.rbMale:
-                        Toast.makeText(MainActivity.this, "Male", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.VISIBLE);
                         break;
                     case R.id.rbFemale:
-                        Toast.makeText(MainActivity.this, "Female", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
                         break;
                     case R.id.rbOther:
                         Toast.makeText(MainActivity.this, "What the heck are you!", Toast.LENGTH_SHORT).show();
@@ -40,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         checkBoxHarry.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
