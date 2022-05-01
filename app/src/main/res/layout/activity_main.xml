@@ -4,24 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     tools:context=".MainActivity">
 
-   <Spinner
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-      android:id="@+id/langSpinner"
-      android:layout_centerHorizontal="true"
-       android:entries="@array/language_lists"
-      android:layout_marginTop="40dp"
-      />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/greeting"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
 
-   <ListView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:id="@+id/citiesList"
-       android:layout_below="@+id/langSpinner"
-       android:layout_marginTop="50dp"
-       />
 
 </RelativeLayout>

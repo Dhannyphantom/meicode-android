@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Meicode</string>
+    <string name="greeting">Hello</string>
     <string-array name="language_lists">
         <item>Javascript</item>
         <item>Java</item>
