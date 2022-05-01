@@ -7,81 +7,20 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/rlCheckbox"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/txtHello"
+        android:layout_below="@+id/imgKakashi"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp">
-
-        <CheckBox
-            android:id="@+id/checkboxHarryporter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Harry Porter"
-
-            />
-
-        <CheckBox
-            android:id="@+id/checkboxJoker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/checkboxHarryporter"
-            android:checked="true"
-            android:text="The Joker" />
-
-        <CheckBox
-            android:id="@+id/checkboxMatrix"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/checkboxJoker"
-            android:checked="true"
-            android:text="Matrix"
-
-            />
-
-
-    </RelativeLayout>
-
-    <RadioGroup
-        android:id="@+id/rgGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rlCheckbox"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/rbMale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Male" />
-
-        <RadioButton
-            android:id="@+id/rbFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:text="Female" />
-
-        <RadioButton
-            android:id="@+id/rbOther"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Other" />
-    </RadioGroup>
-
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="visible"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:id="@+id/progressBar"
+        android:layout_marginTop="25dp"
+        android:textSize="25dp"
+        android:text="Hello"
         />
-
-
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/kakashi"
+        android:id="@+id/imgKakashi"
+        android:layout_centerInParent="true"/>
 </RelativeLayout>
