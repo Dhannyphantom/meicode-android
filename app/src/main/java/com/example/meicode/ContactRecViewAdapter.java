@@ -1,5 +1,6 @@
 package com.example.meicode;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -14,28 +15,19 @@ public class ContactRecViewAdapter extends RecyclerView.Adapter<ContactRecViewAd
     private ArrayList<Contact> contacts = new ArrayList<>();
 
     public ContactRecViewAdapter() {
+
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
-    }
-
-    public void setContacts(ArrayList<Contact> contacts) {
-        this.contacts = contacts;
-        notifyDataSetChanged();
-        /*
-        the notifydata.... will notify the adapter that the contacts list
-        has changed and therefore update the Recycler View to show the
-        updated content......
-        Kinda like re-renders the recycler view after changing the contacts list
-         */
-
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contacts_list_item,parent,false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ContactRecViewAdapter.ViewHolder holder, int position) {
-
+        holder.contactsName.setText(contacts.get(position).getName());
     }
 
     @Override
@@ -43,13 +35,18 @@ public class ContactRecViewAdapter extends RecyclerView.Adapter<ContactRecViewAd
         return contacts.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public void setContacts(ArrayList<Contact> contacts) {
+        this.contacts = contacts;
+        notifyDataSetChanged();
+    }
 
-        TextView contactName;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+//        DECLARE CLASSES OF COMPONENTS THAT IS NEEDED IN THE VIEW
+       private TextView contactsName;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            contactName = itemView.findViewById(R.id.txtContact);
+            contactsName = itemView.findViewById(R.id.txtContactName);
         }
     }
 }
