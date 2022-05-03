@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         contacts.add(new Contact("Beck", "beck@gmail.com", "http://image.jph"));
         contacts.add(new Contact("Rebecca", "rebecca@gmail.com", "http://image.jph"));
 
-        ContactRecViewAdapter contactRecViewAdapter = new ContactRecViewAdapter();
+        ContactRecViewAdapter contactRecViewAdapter = new ContactRecViewAdapter(this);
         contactRecViewAdapter.setContacts(contacts);
 
         contactsRecView.setAdapter(contactRecViewAdapter);
